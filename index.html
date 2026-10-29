@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANTA — Engineered Beyond Motion</title>
+  <meta name="description" content="VANTA is a next-generation electric performance automotive brand. Discover the flagship VANTA X1 with dual-motor AWD, active aerodynamics, and intelligent cockpit.">
+  <meta name="theme-color" content="#07080a">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+  <!-- Custom Cursor Elements (Desktop Only) -->
+  <div class="custom-cursor" id="cursorDot" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       1. NAVIGATION
+       ========================================================================= -->
+  <header class="vanta-navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#hero" class="nav-brand" aria-label="VANTA Homepage">
+        <svg class="brand-emblem" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 2L32 26H24L18 14L12 26H4L18 2Z" fill="currentColor" />
+          <path d="M18 8L24 20H20L18 16L16 20H12L18 8Z" fill="#00e5ff" opacity="0.9" />
+        </svg>
+        <span class="brand-text">VANTA</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#featured-model" class="nav-link" data-hover>Models</a></li>
+          <li><a href="#technology" class="nav-link" data-hover>Technology</a></li>
+          <li><a href="#performance" class="nav-link" data-hover>Performance</a></li>
+          <li><a href="#cinematic" class="nav-link" data-hover>Experience</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#configurator" class="btn btn-primary nav-cta" data-hover>
+          <span>CONFIGURE</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="drawer-inner">
+        <span class="drawer-tag">NAVIGATION // 01</span>
+        <ul class="drawer-links">
+          <li><a href="#featured-model" class="drawer-link">01 / Models</a></li>
+          <li><a href="#technology" class="drawer-link">02 / Technology</a></li>
+          <li><a href="#performance" class="drawer-link">03 / Performance</a></li>
+          <li><a href="#cinematic" class="drawer-link">04 / Experience</a></li>
+          <li><a href="#configurator" class="drawer-link highlight">05 / Configure X1 →</a></li>
+        </ul>
+        <div class="drawer-footer">
+          <p class="drawer-tagline">VANTA MOTOR CORPORATION &copy; 2026</p>
+          <span class="drawer-specs">X1 ALL-ELECTRIC PLATFORM</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- =========================================================================
+         2. HERO SECTION
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <!-- Background Ambient Grid & Glow FX -->
+      <div class="hero-background-wrapper" aria-hidden="true">
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        <div class="technical-grid"></div>
+        <div class="beam-light"></div>
+        <div class="subtle-noise"></div>
+      </div>
+
+      <div class="hero-container">
+        <!-- Floating Telemetry Metadata -->
+        <div class="hero-telemetry">
+          <div class="telemetry-badge">
+            <span class="pulse-dot"></span>
+            <span>SYSTEM INITIALIZED // ALL SYSTEMS NOMINAL</span>
+          </div>
+          <span class="telemetry-coords">LAT 37.7749° N &middot; LON 122.4194° W</span>
+        </div>
+
+        <!-- Hero Typography -->
+        <div class="hero-content">
+          <div class="hero-badge-tag">INTRODUCING THE VANTA X1</div>
+          <h1 class="hero-title">
+            <span class="hero-line">ENGINEERED</span>
+            <span class="hero-line">BEYOND</span>
+            <span class="hero-line hero-line-accent">MOTION.</span>
+          </h1>
+          <p class="hero-subheading">
+            Pure electric performance. Intelligent by design.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#featured-model" class="btn btn-primary" data-hover>
+              <span>EXPLORE VANTA</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#configurator" class="btn btn-secondary" data-hover>
+              <span>CONFIGURE X1</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Dominating car visual with parallax layer -->
+        <div class="hero-visual-wrapper" id="heroVisual">
+          <div class="car-underglow" aria-hidden="true"></div>
+          <div class="hero-image-container">
+            <img 
+              src="assets/hero-car.jpg" 
+              alt="VANTA X1 high-performance electric hypercar in minimalist studio lighting" 
+              class="hero-car-image"
+              id="heroCarImg"
+              loading="eager"
+              width="1376"
+              height="768"
+            />
+          </div>
+          <!-- Corner Technical Reticles -->
+          <div class="hud-bracket bracket-tl"></div>
+          <div class="hud-bracket bracket-tr"></div>
+          <div class="hud-bracket bracket-bl"></div>
+          <div class="hud-bracket bracket-br"></div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#intro" class="scroll-indicator" aria-label="Scroll to explore">
+          <span class="scroll-label">SCROLL TO EXPLORE</span>
+          <div class="scroll-track">
+            <div class="scroll-thumb"></div>
+          </div>
+          <span class="scroll-arrow">&darr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. INTRO / BRAND STATEMENT
+         ========================================================================= -->
+    <section class="intro-section" id="intro">
+      <div class="intro-container">
+        <div class="intro-eyebrow">
+          <span class="eyebrow-index">// 01 &mdash; MANIFESTO</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <blockquote class="intro-statement">
+          <div class="statement-group line-group-1">
+            <span class="statement-word">WE</span>
+            <span class="statement-word">DIDN&rsquo;T</span>
+            <span class="statement-word highlight-word">REINVENT</span>
+            <span class="statement-word">THE</span>
+            <span class="statement-word">CAR.</span>
+          </div>
+          <div class="statement-group line-group-2">
+            <span class="statement-word">WE</span>
+            <span class="statement-word">REINVENTED</span>
+            <span class="statement-word highlight-accent">WHAT</span>
+            <span class="statement-word highlight-accent">IT</span>
+            <span class="statement-word highlight-accent">CAN</span>
+            <span class="statement-word highlight-accent">BE.</span>
+          </div>
+        </blockquote>
+
+        <div class="intro-footer-text">
+          <p>
+            Born from unconstrained computational aerodynamics and next-generation solid-state silicon carbide architecture. VANTA represents the convergence of racing-grade physics and cognitive machine intelligence.
+          </p>
+          <div class="intro-specs-summary">
+            <div class="spec-pill">
+              <span class="spec-key">CHASSIS</span>
+              <span class="spec-val">MONOCOQUE CARBON-Ti</span>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-key">DRAG COEFF</span>
+              <span class="spec-val">0.208 Cd</span>
+            </div>
+            <div class="spec-pill">
+              <span class="spec-key">WEIGHT DIST</span>
+              <span class="spec-val">48 : 52 OPTIMIZED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. FEATURED MODEL (VANTA X1 & Interactive Hotspots)
+         ========================================================================= -->
+    <section class="featured-section" id="featured-model">
+      <div class="section-header container">
+        <div class="header-pre">// 02 &mdash; FLAGSHIP PLATFORM</div>
+        <div class="header-main-row">
+          <div>
+            <h2 class="section-title">VANTA X1</h2>
+            <p class="section-subtitle">Electric performance, without compromise.</p>
+          </div>
+          <div class="hotspot-instructions">
+            <span class="instruction-pulse"></span>
+            <span>CLICK HOTSPOTS (01 - 04) TO INSPECT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-stage container">
+        <!-- Interactive Hotspot Stage Wrapper -->
+        <div class="interactive-car-stage" id="hotspotStage">
+          <!-- Car Display Image -->
+          <div class="stage-image-wrapper">
+            <img 
+              src="assets/side-profile.jpg" 
+              alt="VANTA X1 side profile showing aerodynamic silhouette and active aero features" 
+              class="stage-car-image"
+              id="hotspotCarImage"
+              width="1376"
+              height="768"
+            />
+            <div class="stage-grid-overlay" aria-hidden="true"></div>
+          </div>
+
+          <!-- Hotspot 01: Active Aerodynamics (Rear Wing) -->
+          <div class="hotspot" style="top: 38%; left: 16%;" data-hotspot="1">
+            <button class="hotspot-trigger" aria-label="Inspect 01 Active Aerodynamics" aria-expanded="false" data-hover>
+              <span class="hotspot-ping"></span>
+              <span class="hotspot-core">01</span>
+            </button>
+            <div class="hotspot-card" role="region" aria-label="Active Aerodynamics Info">
+              <div class="card-header">
+                <span class="card-code">SYSTEM // 01</span>
+                <button class="card-close" aria-label="Close details">&times;</button>
+              </div>
+              <h3 class="card-title">ACTIVE AERODYNAMICS</h3>
+              <p class="card-desc">
+                Electro-actuated carbon fiber rear wing with dual-stage DRS (Drag Reduction System) and adaptive underbody venturi tunnels generating 680kg of downforce at 280 km/h.
+              </p>
+              <div class="card-metric">
+                <span class="metric-label">DYNAMIC DOWNFORCE</span>
+                <span class="metric-value">680 KG @ 280 KM/H</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 02: Adaptive Lighting (Front Fascia) -->
+          <div class="hotspot" style="top: 57%; left: 88%;" data-hotspot="2">
+            <button class="hotspot-trigger" aria-label="Inspect 02 Adaptive Lighting" aria-expanded="false" data-hover>
+              <span class="hotspot-ping"></span>
+              <span class="hotspot-core">02</span>
+            </button>
+            <div class="hotspot-card" role="region" aria-label="Adaptive Lighting Info">
+              <div class="card-header">
+                <span class="card-code">SYSTEM // 02</span>
+                <button class="card-close" aria-label="Close details">&times;</button>
+              </div>
+              <h3 class="card-title">ADAPTIVE LIGHTING</h3>
+              <p class="card-desc">
+                Matrix Micro-LED projectors with 1.3 million micro-mirrors. Dynamically sculpts light around oncoming traffic and projects navigational vectors directly onto the tarmac.
+              </p>
+              <div class="card-metric">
+                <span class="metric-label">PROJECTION RANGE</span>
+                <span class="metric-value">650 METERS HD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 03: Intelligent Cockpit (Cabin) -->
+          <div class="hotspot" style="top: 36%; left: 54%;" data-hotspot="3">
+            <button class="hotspot-trigger" aria-label="Inspect 03 Intelligent Cockpit" aria-expanded="false" data-hover>
+              <span class="hotspot-ping"></span>
+              <span class="hotspot-core">03</span>
+            </button>
+            <div class="hotspot-card" role="region" aria-label="Intelligent Cockpit Info">
+              <div class="card-header">
+                <span class="card-code">SYSTEM // 03</span>
+                <button class="card-close" aria-label="Close details">&times;</button>
+              </div>
+              <h3 class="card-title">INTELLIGENT COCKPIT</h3>
+              <p class="card-desc">
+                Continuous panoramic curved OLED telemetry array, cognitive biometric eye-tracking, synthetic haptic yoke, and neural voice arbitration responding in 12ms.
+              </p>
+              <div class="card-metric">
+                <span class="metric-label">DISPLAY REFRESH</span>
+                <span class="metric-value">165 HZ OLED PANORAMA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 04: Dual Motor AWD (Wheel / Powertrain) -->
+          <div class="hotspot" style="top: 64%; left: 32%;" data-hotspot="4">
+            <button class="hotspot-trigger" aria-label="Inspect 04 Dual Motor AWD" aria-expanded="false" data-hover>
+              <span class="hotspot-ping"></span>
+              <span class="hotspot-core">04</span>
+            </button>
+            <div class="hotspot-card" role="region" aria-label="Dual Motor AWD Info">
+              <div class="card-header">
+                <span class="card-code">SYSTEM // 04</span>
+                <button class="card-close" aria-label="Close details">&times;</button>
+              </div>
+              <h3 class="card-title">DUAL MOTOR AWD</h3>
+              <p class="card-desc">
+                Twin carbon-sleeved permanent magnet motors spinning up to 24,000 RPM. Independent millisecond torque vectoring across all four wheels eliminates understeer completely.
+              </p>
+              <div class="card-metric">
+                <span class="metric-label">RESPONSE LATENCY</span>
+                <span class="metric-value">&lt; 1.5 MILLISECONDS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotspot Quick Selector Pills (Mobile Friendly) -->
+        <div class="hotspot-nav-pills" role="tablist" aria-label="Hotspot inspection list">
+          <button class="hotspot-pill-btn active" data-target="1" role="tab">01 &mdash; ACTIVE AERODYNAMICS</button>
+          <button class="hotspot-pill-btn" data-target="2" role="tab">02 &mdash; ADAPTIVE LIGHTING</button>
+          <button class="hotspot-pill-btn" data-target="3" role="tab">03 &mdash; INTELLIGENT COCKPIT</button>
+          <button class="hotspot-pill-btn" data-target="4" role="tab">04 &mdash; DUAL MOTOR AWD</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. PERFORMANCE SECTION (Telemetry Dashboard)
+         ========================================================================= -->
+    <section class="performance-section" id="performance">
+      <div class="perf-ambient-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <div class="header-pre">// 03 &mdash; KINETIC SPECIFICATION</div>
+          <h2 class="section-title">ENGINEERED FOR THE LIMIT.</h2>
+          <p class="section-subtitle">Obsessively calibrated numbers that redefine physical thresholds.</p>
+        </div>
+
+        <!-- Automotive Telemetry Metric Cards -->
+        <div class="telemetry-dashboard" id="telemetryDashboard">
+          <!-- Metric 1: 0-100 KM/H -->
+          <div class="telemetry-card" data-hover>
+            <div class="card-top-indicator">
+              <span class="metric-tag">ACCELERATION</span>
+              <span class="live-dot"></span>
+            </div>
+            <div class="metric-body">
+              <div class="metric-number-wrapper">
+                <span class="counter" data-target="2.8" data-decimals="1">0.0</span>
+                <span class="metric-unit">SEC</span>
+              </div>
+              <div class="metric-label">0 &mdash; 100 KM/H</div>
+            </div>
+            <div class="metric-graph-bar">
+              <div class="bar-fill" style="--percent: 94%;"></div>
+            </div>
+            <div class="metric-footnote">SUB-THREE SECOND LAUNCH CONTROL</div>
+          </div>
+
+          <!-- Metric 2: POWER -->
+          <div class="telemetry-card" data-hover>
+            <div class="card-top-indicator">
+              <span class="metric-tag">OUTPUT</span>
+              <span class="live-dot"></span>
+            </div>
+            <div class="metric-body">
+              <div class="metric-number-wrapper">
+                <span class="counter" data-target="780" data-decimals="0">0</span>
+                <span class="metric-unit">HP</span>
+              </div>
+              <div class="metric-label">NET SYSTEM POWER</div>
+            </div>
+            <div class="metric-graph-bar">
+              <div class="bar-fill" style="--percent: 88%;"></div>
+            </div>
+            <div class="metric-footnote">1,050 NM INSTANTANEOUS TORQUE</div>
+          </div>
+
+          <!-- Metric 3: TOP SPEED -->
+          <div class="telemetry-card" data-hover>
+            <div class="card-top-indicator">
+              <span class="metric-tag">VELOCITY</span>
+              <span class="live-dot"></span>
+            </div>
+            <div class="metric-body">
+              <div class="metric-number-wrapper">
+                <span class="counter" data-target="320" data-decimals="0">0</span>
+                <span class="metric-unit">KM/H</span>
+              </div>
+              <div class="metric-label">TOP TRACK SPEED</div>
+            </div>
+            <div class="metric-graph-bar">
+              <div class="bar-fill" style="--percent: 82%;"></div>
+            </div>
+            <div class="metric-footnote">ELECTRONICALLY MANAGED CEILING</div>
+          </div>
+
+          <!-- Metric 4: RANGE -->
+          <div class="telemetry-card" data-hover>
+            <div class="card-top-indicator">
+              <span class="metric-tag">ENDURANCE</span>
+              <span class="live-dot"></span>
+            </div>
+            <div class="metric-body">
+              <div class="metric-number-wrapper">
+                <span class="counter" data-target="620" data-decimals="0">0</span>
+                <span class="metric-unit">KM</span>
+              </div>
+              <div class="metric-label">WLTP COMBINED RANGE</div>
+            </div>
+            <div class="metric-graph-bar">
+              <div class="bar-fill" style="--percent: 76%;"></div>
+            </div>
+            <div class="metric-footnote">108 KWH SOLID-STATE PACK</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. PERFORMANCE INTERACTION (Interactive Acceleration Visualizer)
+         ========================================================================= -->
+    <section class="acceleration-section" id="acceleration-viz">
+      <div class="container">
+        <div class="sim-header">
+          <div>
+            <div class="header-pre">// 04 &mdash; DYNAMIC VISUALIZATION</div>
+            <h3 class="sim-title">DYNAMIC ACCELERATION TELEMETRY</h3>
+            <p class="sim-desc">Simulate throttle mapping from rest to maximum aerodynamic ceiling.</p>
+          </div>
+          <div class="sim-actions">
+            <button class="btn btn-secondary sim-launch-btn" id="launchSimBtn" data-hover>
+              <span class="launch-icon">&blacktriangleright;</span>
+              <span>SIMULATE LAUNCH RUN</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="simulator-console">
+          <!-- Live Telemetry Readout Bars -->
+          <div class="console-metrics-bar">
+            <div class="readout-box">
+              <span class="readout-title">VELOCITY</span>
+              <div class="readout-value-row">
+                <span class="readout-num" id="liveSpeed">0</span>
+                <span class="readout-sub">KM/H</span>
+              </div>
+            </div>
+            <div class="readout-box">
+              <span class="readout-title">ELAPSED TIME</span>
+              <div class="readout-value-row">
+                <span class="readout-num" id="liveTime">0.00</span>
+                <span class="readout-sub">SEC</span>
+              </div>
+            </div>
+            <div class="readout-box">
+              <span class="readout-title">G-FORCE (LONGITUDINAL)</span>
+              <div class="readout-value-row">
+                <span class="readout-num" id="liveGForce">0.00</span>
+                <span class="readout-sub">G</span>
+              </div>
+            </div>
+            <div class="readout-box">
+              <span class="readout-title">OUTPUT DRAW</span>
+              <div class="readout-value-row">
+                <span class="readout-num" id="livePower">0</span>
+                <span class="readout-sub">KW</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Acceleration Curve Graph -->
+          <div class="svg-graph-container">
+            <svg class="acceleration-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-label="Acceleration curve">
+              <defs>
+                <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.3"/>
+                  <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+                </linearGradient>
+                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Grid Lines -->
+              <line x1="0" y1="60" x2="800" y2="60" stroke="#1f242d" stroke-dasharray="3 3"/>
+              <line x1="0" y1="120" x2="800" y2="120" stroke="#1f242d" stroke-dasharray="3 3"/>
+              <line x1="0" y1="180" x2="800" y2="180" stroke="#1f242d" stroke-dasharray="3 3"/>
+              
+              <!-- Curve Fill -->
+              <path id="graphArea" d="M 40,210 Q 200,80 760,30 L 760,210 Z" fill="url(#areaGradient)" />
+
+              <!-- Main Kinetic Curve Path -->
+              <path id="graphPath" d="M 40,210 Q 200,80 760,30" fill="none" stroke="url(#curveGradient)" stroke-width="3" stroke-linecap="round"/>
+
+              <!-- Interactive Dynamic Head Marker -->
+              <circle id="graphHead" cx="40" cy="210" r="6" fill="#00e5ff" stroke="#ffffff" stroke-width="2"/>
+              <line id="graphGuideline" x1="40" y1="0" x2="40" y2="210" stroke="#00e5ff" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+
+              <!-- Axis Labels -->
+              <text x="45" y="230" fill="#687385" font-family="'JetBrains Mono', monospace" font-size="11">0 KM/H (REST)</text>
+              <text x="360" y="230" fill="#687385" font-family="'JetBrains Mono', monospace" font-size="11">100 KM/H (2.8s)</text>
+              <text x="680" y="230" fill="#687385" font-family="'JetBrains Mono', monospace" font-size="11">320 KM/H (V-MAX)</text>
+            </svg>
+          </div>
+
+          <!-- Slider Controller Input -->
+          <div class="slider-control-zone">
+            <div class="slider-labels">
+              <span>STANDSTILL (0%)</span>
+              <span class="active-throttle-tag" id="throttlePercent">THROTTLE: 0%</span>
+              <span>PEAK V-MAX (100%)</span>
+            </div>
+            <div class="custom-slider-track">
+              <input 
+                type="range" 
+                min="0" 
+                max="100" 
+                value="0" 
+                id="accelSlider" 
+                class="accel-slider"
+                aria-label="Throttle simulation slider"
+              />
+              <div class="slider-progress-fill" id="sliderFill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. TECHNOLOGY SECTION
+         ========================================================================= -->
+    <section class="tech-section" id="technology">
+      <div class="container">
+        <div class="section-header">
+          <div class="header-pre">// 05 &mdash; ARTIFICIAL COGNITION</div>
+          <h2 class="section-title">INTELLIGENCE, IN MOTION.</h2>
+          <p class="section-subtitle">Proprietary neural architectures working in real-time synergy with mechanical physics.</p>
+        </div>
+
+        <div class="tech-grid">
+          <!-- Feature 1: AI Driver Interface -->
+          <div class="tech-card" data-hover>
+            <div class="tech-card-bg" style="background-image: url('assets/cockpit.jpg');"></div>
+            <div class="tech-card-content">
+              <div class="tech-badge">01 // NEURAL</div>
+              <h3 class="tech-title">AI Driver Interface</h3>
+              <p class="tech-desc">
+                Continuous cognitive anticipation. Predictive eye-tracking and biometric steering yoke continuously adapt regenerative braking thresholds and steering ratio based on driver intent.
+              </p>
+              <div class="tech-features-list">
+                <span class="tech-pill">Neural Gaze Assist</span>
+                <span class="tech-pill">Predictive Vectoring</span>
+              </div>
+            </div>
+            <div class="tech-hud-corner"></div>
+          </div>
+
+          <!-- Feature 2: Adaptive Suspension -->
+          <div class="tech-card" data-hover>
+            <div class="tech-interactive-canvas-box">
+              <!-- Visual vector representation -->
+              <div class="radar-scan" aria-hidden="true">
+                <div class="radar-circle rc-1"></div>
+                <div class="radar-circle rc-2"></div>
+                <div class="radar-sweep"></div>
+                <div class="suspension-oscillator">
+                  <span class="damper d-1"></span>
+                  <span class="damper d-2"></span>
+                  <span class="damper d-3"></span>
+                  <span class="damper d-4"></span>
+                </div>
+              </div>
+            </div>
+            <div class="tech-card-content">
+              <div class="tech-badge">02 // CHASSIS</div>
+              <h3 class="tech-title">Adaptive Suspension</h3>
+              <p class="tech-desc">
+                Magneto-rheological dampers reacting in 1.2 milliseconds. High-frequency forward LiDAR scans the road surface 100 meters ahead, pre-adjusting damping rates before the tires hit uneven surfaces.
+              </p>
+              <div class="tech-features-list">
+                <span class="tech-pill">1,000 Hz Sampling</span>
+                <span class="tech-pill">LiDAR Road Preview</span>
+              </div>
+            </div>
+            <div class="tech-hud-corner"></div>
+          </div>
+
+          <!-- Feature 3: Intelligent Energy Management -->
+          <div class="tech-card" data-hover>
+            <div class="tech-interactive-canvas-box">
+              <div class="battery-cell-matrix" aria-hidden="true">
+                <div class="energy-flow-bars">
+                  <div class="energy-bar active" style="--h: 85%;"></div>
+                  <div class="energy-bar active" style="--h: 92%;"></div>
+                  <div class="energy-bar active" style="--h: 78%;"></div>
+                  <div class="energy-bar active" style="--h: 96%;"></div>
+                  <div class="energy-bar active" style="--h: 88%;"></div>
+                </div>
+                <span class="energy-status-txt">800V SiC ACTIVE OPTIMIZATION</span>
+              </div>
+            </div>
+            <div class="tech-card-content">
+              <div class="tech-badge">03 // THERMAL &amp; POWER</div>
+              <h3 class="tech-title">Intelligent Energy Management</h3>
+              <p class="tech-desc">
+                800-volt Silicon Carbide (SiC) inverted power architecture with liquid-cooled dielectric immersion. Intelligent heat scavengers channel waste inverter warmth to cabin and battery conditioning.
+              </p>
+              <div class="tech-features-list">
+                <span class="tech-pill">10&ndash;80% in 14 Min</span>
+                <span class="tech-pill">350 kW DC Fast Charge</span>
+              </div>
+            </div>
+            <div class="tech-hud-corner"></div>
+          </div>
+
+          <!-- Feature 4: 360° Sensor System -->
+          <div class="tech-card" data-hover>
+            <div class="tech-interactive-canvas-box">
+              <div class="sensor-mesh" aria-hidden="true">
+                <div class="mesh-point" style="top: 20%; left: 50%;"></div>
+                <div class="mesh-point" style="top: 80%; left: 50%;"></div>
+                <div class="mesh-point" style="top: 50%; left: 20%;"></div>
+                <div class="mesh-point" style="top: 50%; left: 80%;"></div>
+                <div class="sensor-wave-ring"></div>
+                <span class="sensor-status-txt">TRIPLE-REDUNDANT PERCEPTION</span>
+              </div>
+            </div>
+            <div class="tech-card-content">
+              <div class="tech-badge">04 // PERCEPTION</div>
+              <h3 class="tech-title">360&deg; Sensor System</h3>
+              <p class="tech-desc">
+                Quad solid-state flush LiDAR arrays, 12 ultrasonic transducers, and 8 high-dynamic-range cameras. Delivers complete spherical environmental perception under zero-visibility rain, fog, and darkness.
+              </p>
+              <div class="tech-features-list">
+                <span class="tech-pill">Quad Solid-State LiDAR</span>
+                <span class="tech-pill">All-Weather Autonomy</span>
+              </div>
+            </div>
+            <div class="tech-hud-corner"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. INTERACTIVE COLOR CONFIGURATOR
+         ========================================================================= -->
+    <section class="configurator-section" id="configurator">
+      <div class="container">
+        <div class="section-header">
+          <div class="header-pre">// 06 &mdash; BESPOKE TAILORING</div>
+          <h2 class="section-title">MAKE IT YOURS.</h2>
+          <p class="section-subtitle">Specify your bespoke VANTA X1 configuration. Precision materials and handcrafted finishes.</p>
+        </div>
+
+        <div class="configurator-grid">
+          <!-- Car Display Viewport -->
+          <div class="config-viewport">
+            <div class="config-stage-frame">
+              <div class="config-car-layer" id="configCarContainer">
+                <img 
+                  src="assets/side-profile.jpg" 
+                  alt="VANTA X1 Bespoke Configurator View" 
+                  class="config-car-img" 
+                  id="configCarImg"
+                  width="1376"
+                  height="768"
+                />
+                <!-- Color Tint Tint & Specular Shading Layers -->
+                <div class="car-tint-overlay" id="carTintOverlay"></div>
+                <div class="car-finish-gloss" id="carFinishGloss"></div>
+              </div>
+
+              <!-- Live Configuration Watermark Badge -->
+              <div class="config-watermark">
+                <span class="watermark-label">SPECIFICATION:</span>
+                <span class="watermark-val" id="watermarkColor">OBSIDIAN // GLOSS</span>
+              </div>
+            </div>
+
+            <!-- Viewport Sub-bar -->
+            <div class="viewport-subbar">
+              <div class="subbar-spec">
+                <span class="spec-k">DRIVETRAIN:</span>
+                <span class="spec-v">DUAL MOTOR AWD (780 HP)</span>
+              </div>
+              <div class="subbar-spec">
+                <span class="spec-k">EST. DELIVERY:</span>
+                <span class="spec-v">Q4 2026 // LIMITED PRODUCTION</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration Controls Panel -->
+          <div class="config-panel">
+            <!-- Color Selector -->
+            <div class="panel-group">
+              <div class="group-title-row">
+                <span class="group-title">EXTERIOR BESPOKE LIVERY</span>
+                <span class="group-active-name" id="selectedColorLabel">OBSIDIAN</span>
+              </div>
+              <div class="color-swatch-list" role="radiogroup" aria-label="Vehicle Exterior Color">
+                <!-- Color 1: Obsidian -->
+                <button class="swatch-btn active" data-color="obsidian" data-name="OBSIDIAN" aria-checked="true" role="radio" data-hover>
+                  <span class="swatch-dot color-obsidian"></span>
+                  <span class="swatch-name">OBSIDIAN</span>
+                </button>
+                <!-- Color 2: Titanium -->
+                <button class="swatch-btn" data-color="titanium" data-name="TITANIUM" aria-checked="false" role="radio" data-hover>
+                  <span class="swatch-dot color-titanium"></span>
+                  <span class="swatch-name">TITANIUM</span>
+                </button>
+                <!-- Color 3: Arctic -->
+                <button class="swatch-btn" data-color="arctic" data-name="ARCTIC" aria-checked="false" role="radio" data-hover>
+                  <span class="swatch-dot color-arctic"></span>
+                  <span class="swatch-name">ARCTIC</span>
+                </button>
+                <!-- Color 4: Crimson -->
+                <button class="swatch-btn" data-color="crimson" data-name="CRIMSON" aria-checked="false" role="radio" data-hover>
+                  <span class="swatch-dot color-crimson"></span>
+                  <span class="swatch-name">CRIMSON</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Finish Type Selector -->
+            <div class="panel-group">
+              <div class="group-title-row">
+                <span class="group-title">SURFACE FINISH</span>
+                <span class="group-active-name" id="selectedFinishLabel">METALLIC GLOSS</span>
+              </div>
+              <div class="finish-pill-group">
+                <button class="finish-btn active" data-finish="gloss" data-hover>METALLIC GLOSS</button>
+                <button class="finish-btn" data-finish="satin" data-hover>SATIN MATTE</button>
+                <button class="finish-btn" data-finish="carbon" data-hover>RAW CARBON WEAVE</button>
+              </div>
+            </div>
+
+            <!-- Wheel Choice -->
+            <div class="panel-group">
+              <div class="group-title-row">
+                <span class="group-title">FORGED WHEELS</span>
+                <span class="group-active-name" id="selectedWheelLabel">21" AERO-BLADE FORGED</span>
+              </div>
+              <div class="wheel-pill-group">
+                <button class="wheel-btn active" data-wheel="aeroblade" data-hover>21" AERO-BLADE</button>
+                <button class="wheel-btn" data-wheel="carbon-track" data-hover>22" CARBON TRACK</button>
+              </div>
+            </div>
+
+            <!-- Price & Order Summary Box -->
+            <div class="config-summary-box">
+              <div class="summary-price-row">
+                <span class="summary-label">BASE MSRP</span>
+                <span class="summary-price" id="configBasePrice">$185,000</span>
+              </div>
+              <div class="summary-price-row">
+                <span class="summary-label">SELECTED OPTIONS</span>
+                <span class="summary-price" id="configOptionsPrice">+$0</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-total-row">
+                <span class="total-label">TOTAL CONFIGURATION</span>
+                <span class="total-amount" id="configTotalPrice">$185,000</span>
+              </div>
+
+              <!-- Main Configure CTA -->
+              <button class="btn btn-primary config-submit-btn" id="openReserveModalBtn" data-hover>
+                <span>CONFIGURE YOUR VANTA &rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. FULL-SCREEN CINEMATIC SECTION
+         ========================================================================= -->
+    <section class="cinematic-section" id="cinematic">
+      <div class="cinematic-bg-container">
+        <img 
+          src="assets/cinematic-track.jpg" 
+          alt="VANTA electric hypercar on desert coastal highway at twilight with speed light trails" 
+          class="cinematic-bg-img"
+          id="cinematicBg"
+          loading="lazy"
+          width="1376"
+          height="768"
+        />
+        <div class="cinematic-vignette"></div>
+      </div>
+
+      <div class="cinematic-content container">
+        <div class="cinematic-eyebrow">// 07 &mdash; INSTANTANEOUS TORQUE</div>
+        <h2 class="cinematic-headline">
+          <span class="cinematic-word">SILENCE.</span>
+          <span class="cinematic-word">THEN</span>
+          <span class="cinematic-word cinematic-accent">THUNDER.</span>
+        </h2>
+        <p class="cinematic-caption">
+          Instantaneous torque creates a visceral experience beyond convention. A silent surge of unadulterated electric acceleration.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. FINAL CTA SECTION & FOOTER
+         ========================================================================= -->
+    <section class="final-cta-section" id="cta">
+      <div class="cta-ambient" aria-hidden="true"></div>
+      <div class="container cta-container">
+        <div class="cta-header">
+          <div class="header-pre">// 08 &mdash; COMMENCE OWNERSHIP</div>
+          <h2 class="cta-headline">
+            THE ROAD IS<br>
+            <span class="cta-highlight">WAITING.</span>
+          </h2>
+          <p class="cta-subtitle">Meet the next generation of performance.</p>
+
+          <div class="cta-btn-group">
+            <a href="#featured-model" class="btn btn-secondary" data-hover>
+              <span>EXPLORE VANTA</span>
+            </a>
+            <a href="#configurator" class="btn btn-primary" data-hover>
+              <span>CONFIGURE X1</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Giant Architectural Brand Mark Background -->
+        <div class="footer-giant-mark" aria-hidden="true">VANTA</div>
+      </div>
+
+      <!-- Modern Automotive Footer -->
+      <footer class="vanta-footer">
+        <div class="container footer-content">
+          <div class="footer-col brand-col">
+            <div class="footer-logo">
+              <svg class="brand-emblem" viewBox="0 0 36 28" fill="none" width="28">
+                <path d="M18 2L32 26H24L18 14L12 26H4L18 2Z" fill="currentColor" />
+                <path d="M18 8L24 20H20L18 16L16 20H12L18 8Z" fill="#00e5ff" opacity="0.9" />
+              </svg>
+              <span>VANTA</span>
+            </div>
+            <p class="footer-tagline">Engineered beyond motion. Designed for tomorrow.</p>
+            <span class="footer-sub">ISO 9001 &middot; FIA GT ELECTRIC REGULATION TESTED</span>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="col-heading">VEHICLES</h4>
+            <ul class="col-links">
+              <li><a href="#featured-model" data-hover>VANTA X1 Flagship</a></li>
+              <li><a href="#configurator" data-hover>X1 Track Package</a></li>
+              <li><a href="#technology" data-hover>Powertrain Architecture</a></li>
+              <li><a href="#configurator" data-hover>Bespoke Commissioning</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="col-heading">TECHNOLOGY</h4>
+            <ul class="col-links">
+              <li><a href="#technology" data-hover>Neural Gaze Assist</a></li>
+              <li><a href="#technology" data-hover>Solid-State Battery</a></li>
+              <li><a href="#technology" data-hover>Active DRS Aero</a></li>
+              <li><a href="#performance" data-hover>Telemetric Diagnostics</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col newsletter-col">
+            <h4 class="col-heading">INTELLIGENCE BRIEFING</h4>
+            <p class="newsletter-desc">Receive confidential track telemetry updates and early production build slots.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="ENTER YOUR EMAIL" class="newsletter-input" required aria-label="Email Address">
+              <button type="submit" class="newsletter-btn" data-hover aria-label="Subscribe">→</button>
+            </form>
+            <div id="newsletterStatus" class="newsletter-status" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <div class="bottom-legal">&copy; 2026 VANTA MOTOR CAR COMPANY. ALL RIGHTS RESERVED.</div>
+          <div class="bottom-links">
+            <a href="#" data-hover>PRIVACY CHARTER</a>
+            <a href="#" data-hover>TERMS OF SPECIFICATION</a>
+            <a href="#" data-hover>GLOBAL PRESS ROOM</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       COMMISSIONING & RESERVATION MODAL
+       ========================================================================= -->
+  <!-- Reservation / Configuration Drawer Modal -->
+  <div class="vanta-modal" id="reserveModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="reserveModalBackdrop"></div>
+    <div class="modal-dialog reserve-dialog">
+      <div class="modal-top-bar">
+        <span class="modal-code">COMMISSIONING ORDER // BUILD SPECIFICATION</span>
+        <button class="modal-close-btn" id="closeReserveBtn" aria-label="Close configuration">&times;</button>
+      </div>
+
+      <div class="reserve-body">
+        <div class="reserve-car-card">
+          <img src="assets/side-profile.jpg" alt="VANTA X1" class="reserve-thumb" width="120" height="70">
+          <div>
+            <h3 class="reserve-model-name">VANTA X1</h3>
+            <p class="reserve-model-desc" id="reserveSummaryText">Livery: Obsidian &middot; 21" Aero-Blade &middot; Dual Motor 780 HP</p>
+            <span class="reserve-price-tag" id="reserveModalPrice">$185,000</span>
+          </div>
+        </div>
+
+        <form class="reserve-form" id="reserveForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="clientFirstName">FIRST NAME</label>
+              <input type="text" id="clientFirstName" required placeholder="Alexander">
+            </div>
+            <div class="form-field">
+              <label for="clientLastName">LAST NAME</label>
+              <input type="text" id="clientLastName" required placeholder="Vance">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="clientEmail">CLIENT DIRECT EMAIL</label>
+            <input type="email" id="clientEmail" required placeholder="a.vance@studio.com">
+          </div>
+          <div class="form-field">
+            <label for="clientRegion">PREFERRED DELIVERY STUDIO</label>
+            <select id="clientRegion">
+              <option value="monaco">Monaco // Port Hercule Atelier</option>
+              <option value="tokyo">Tokyo // Ginza Flagship Lounge</option>
+              <option value="losangeles">Los Angeles // Beverly Hills Studio</option>
+              <option value="london">London // Mayfair Performance Hub</option>
+              <option value="zurich">Zurich // Bahnhofstrasse Atelier</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-commission-btn" data-hover>
+            <span>SUBMIT COMMISSION REQUEST</span>
+            <svg class="btn-arrow" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript logic -->
+  <script src="script.js" defer></script>
+</body>
+</html>
